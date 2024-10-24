@@ -107,11 +107,31 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.chevron_left),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Text('Menu', style: TextStyle(color: Colors.white),),
+                decoration: BoxDecoration(color: Colors.lightBlue),
+              ),
+              ListTile(
+                leading: Icon(Icons.food_bank),
+                title: Text('Makanan'),
+              ),
+              
+              ListTile(
+                leading: Icon(Icons.local_cafe),
+                title: Text('Makanan'),
+              )
+            ],
+
           ),
+        ),
+        appBar: AppBar(
+          // leading: IconButton(
+          //   onPressed: () {Scaffold.of(context).openDrawer();},
+          //   icon: Icon(Icons.chevron_left),
+          // ),
           backgroundColor: Colors.white,
           title: Text(
             widget.title,
